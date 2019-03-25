@@ -47,6 +47,6 @@ Send a post request to the API gateway with required headers. Postman makes this
 ## TODO
 
 - [ ] Power on Ec2 function
-- [ x ] Restart database function
+- [x] Restart database function
 - [ ] Handle wrong flags set
 - [ ] GUI?
