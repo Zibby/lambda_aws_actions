@@ -23,7 +23,7 @@ module RdsProcess
   def restart_database
     connect_to_rds! if @rdsclient.nil?
     @rdsclient.reboot_db_instance(db_instance_identifier: @db_inst)
-    @body = "Rebooting database: #{db_inst}"
+    @body = "Rebooting database: #{@db_inst}"
     @statuscode = 200
   end
 end
