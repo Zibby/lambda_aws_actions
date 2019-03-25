@@ -28,7 +28,16 @@ Send a post request to the API gateway with required headers. Postman makes this
 |--------|--------|-------|
 |server_id| EC2 instance ID to run cmds against|
 |action | Task to run | Will return a list of avaliable actions if left blank
-| database | Human readable database name of an RDS instance | 
+| database | Human readable database name of an RDS instance |
+
+#### actions
+
+| Action | Requirements | Notes |
+|--------|--------------|----------|
+| teapot  | none | Returns a 418 statuscode, used for testing  |
+| server_status | server_id | |
+| database_address | database | |
+
 
 ## TODO
 
