@@ -39,6 +39,10 @@ Send a post request to the API gateway with required headers. Postman makes this
 | database_address | database | |
 
 
+### Flow Diagram
+
+![postmanscreenshot](/images/flow_dir.jpg)
+
 ## TODO
 
 - [ ] Power on Ec2 function
