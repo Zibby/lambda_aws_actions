@@ -14,9 +14,16 @@ module RdsProcess
 
   def database_address
     connect_to_rds! if @rdsclient.nil?
-    instances = @rdsclient.describe_db_instances(db_instance_identifier: @db_inst).first
-    instance = instances.db_instances.first
+    insts = @rdsclient.describe_db_instances(db_instance_identifier: @db_inst)
+    instance = insts.first.db_instances.first
     @body = instance.endpoint.address
+    @statuscode = 200
+  end
+
+  def restart_database
+    connect_to_rds! if @rdsclient.nil?
+    @rdsclient.reboot_db_instance(db_instance_identifier: @db_inst)
+    @body = "Rebooting database: #{db_inst}"
     @statuscode = 200
   end
 end
