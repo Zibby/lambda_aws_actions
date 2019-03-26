@@ -6,6 +6,8 @@ Lambda function for quick actions on AWS instances
 
 - get RDS instance url
 - get EC2 instance status
+- restart RDS instance
+- power on EC2 instance
 
 ## Use
 
@@ -36,17 +38,20 @@ Send a post request to the API gateway with required headers. Postman makes this
 |--------|--------------|----------|
 | teapot  | none | Returns a 418 statuscode, used for testing  |
 | server_status | server_id | |
+| start_server| server_id | Returns previous and current state|
 | database_address | database | |
 | restart_database| database| |
 
 
 ### Flow Diagram
 
-![postmanscreenshot](/images/flow_dir.jpg)
+![flowdiagram](/images/flow_dir.jpg)
+
+---
 
 ## TODO
 
-- [ ] Power on Ec2 function
+- [x] Power on Ec2 function
 - [x] Restart database function
 - [ ] Handle wrong flags set
 - [ ] GUI?

@@ -19,4 +19,14 @@ module Ec2Process
     @body = "Server is: #{status}"
     @statuscode = 200
   end
+
+  def start_server
+    connect_to_ec2! if @ec2client.nil?
+    state_change = @ec2client.start_instances(instance_ids: [@server])
+    state_change = state_change.first.starting_instances.first
+    old_state = state_change.previous_state.name
+    new_state = state_change.current_state.name
+    @body = "Server changed from #{old_state} to #{new_state}"
+    @statuscode = 200
+  end
 end
