@@ -40,7 +40,8 @@ class LambdaHandler
   end
 
   def list_actions
-    @body = 'You need to choose an action: (server_status, teapot, database_address)'
+    actions = 'server_status, teapot, database_address'
+    @body = "You need to choose an action: (#{actions})"
     @statuscode = 200
   end
 

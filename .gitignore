@@ -1,4 +1,5 @@
 .DS_store
+*.code-workspace
 
 testing/console.rb
 testing/testing.yml

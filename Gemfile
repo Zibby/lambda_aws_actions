@@ -1,8 +1,8 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 gem 'aws-sdk'
 
-group :development do 
+group :development do
   gem 'pry'
   gem 'rspec'
 end
