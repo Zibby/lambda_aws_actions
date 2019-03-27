@@ -5,6 +5,7 @@ module RdsProcess
   attr_accessor :rdsclient
 
   def connect_to_rds!
+    ll 'Connecting to RDS'
     @rdsclient = Aws::RDS::Client.new(
       region: 'eu-west-1',
       access_key_id: ENV['AWSKEY'],
@@ -14,6 +15,7 @@ module RdsProcess
 
   def database_address
     connect_to_rds! if @rdsclient.nil?
+    ll 'getting database address'
     insts = @rdsclient.describe_db_instances(db_instance_identifier: @db_inst)
     instance = insts.first.db_instances.first
     @body = instance.endpoint.address
