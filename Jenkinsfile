@@ -11,6 +11,7 @@ pipeline {
         sh 'bundle install --with development --path ./.gem'
         sh 'HOME=./ bundle exec rubocop'
         cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, cleanupMatrixParent: true, deleteDirs: true)
+        slackSend color: 'red', message: 'built'
       }
     }
   }

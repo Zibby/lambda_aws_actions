@@ -1,5 +1,5 @@
 # lambda_aws_actions
-![build status](https://jenkins.zibbytechnology.ddns.net/job/Zibby/job/lambda_aws_actions/job/master/badge/icon)
+![build status](https://jenkins.zibbytechnology.ddns.net/job/zibby/job/lambda_aws_actions/job/master/badge/icon)
 
 Lambda function for quick actions on AWS instances
 
